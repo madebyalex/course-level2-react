@@ -1,3 +1,9 @@
+@import '../node_modules/codyhouse-framework/main/assets/css/base';
+
+:root {
+  --primary-color: #2cb27c;
+}
+
 .App {
   text-align: center;
 }
@@ -22,17 +28,24 @@
   justify-content: center;
   font-size: calc(10px + 2vmin);
   color: white;
-}
 
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+  h1 {
+    color: #ffffff;
   }
-  to {
-    transform: rotate(360deg);
+}
+
+button {
+  font-size: 1rem;
+  padding: 0.8em 1.2em;
+  color: #ffffff;
+  background-color: var(--primary-color);
+  border: none;
+  font-weight: bold;
+  border-radius: 20rem;
+  min-width: 9rem;
+  margin: 1.5rem;
+
+  &:active {
+    transform: translateY(1px);
   }
 }

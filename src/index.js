@@ -1,6 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import './index.css';
+// import '../node_modules/codyhouse-framework/main/assets/js/util.js';
+import './index.scss';
 import App from './App';
 import * as serviceWorker from './serviceWorker';
 

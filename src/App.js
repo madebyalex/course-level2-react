@@ -1,23 +1,23 @@
 import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import Toggle from './components/Toggle';
+import ToggleRenderProps from './components/ToggleRenderProps';
+import './App.scss';
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
+    <div className='App'>
+      <header className='App-header'>
+        <Toggle>
+          <h1>Hello there!</h1>
+        </Toggle>
+        <ToggleRenderProps
+          render={({ on, toggle }) => (
+            <div>
+              {on && <h1>Show me!</h1>}
+              <button onClick={toggle}>Show / Hide</button>
+            </div>
+          )}
+        />
       </header>
     </div>
   );
