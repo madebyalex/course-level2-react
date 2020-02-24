@@ -15,12 +15,12 @@ export default class ToggleRenderProps extends Component {
     const { render } = this.props;
 
     return (
-      <div>
+      <>
         {render({
           on: this.state.on,
           toggle: this.toggle
         })}
-      </div>
+      </>
     );
   }
 }

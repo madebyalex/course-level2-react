@@ -20,6 +20,35 @@
   }
 }
 
+main {
+  display: grid;
+  grid-template-columns: 1fr 5fr 1fr;
+  grid-template-rows: 1fr 9fr 3fr 0.5fr;
+}
+
+#root {
+  grid-row: 1 / -1;
+  grid-column: 1 / -1;
+}
+
+#portal {
+  grid-row: 3 / 4;
+  grid-column: 2 / 3;
+  z-index: 5;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: rgba(255, 255, 255, 0.03);
+  color: #ffffff;
+  flex-direction: column;
+  text-align: center;
+  padding: 2rem;
+
+  > div * {
+    color: #ffffff;
+  }
+}
+
 .App-header {
   background-color: #282c34;
   min-height: 100vh;
@@ -56,6 +85,7 @@ button {
 }
 
 header.main {
+  padding-top: 1rem;
   position: fixed;
   top: 0;
   left: 0;

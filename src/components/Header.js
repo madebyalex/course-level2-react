@@ -9,10 +9,11 @@ export class Header extends Component {
             <a href='#home'>Home</a>
             <a href='#about'>About</a>
             <a href='#services'>Services</a>
-            <a href='#freebies'>Freebies</a>
             <a href='#contact'>Contact</a>
           </li>
         </ul>
+
+        <button>Show modal</button>
       </header>
     );
   }
