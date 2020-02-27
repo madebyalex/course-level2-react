@@ -1,9 +1,9 @@
-import React from 'react';
+import React, { Fragment } from 'react';
 // import Toggle from './components/Toggle';
 import ToggleRenderProps from './components/ToggleRenderProps';
 import Header from './components/Header';
 import ToggleRPC from './components/ToggleRPC';
-import Portal from './components/Portal';
+import Modal from './components/Modal';
 import './App.scss';
 
 function App() {
@@ -24,15 +24,15 @@ function App() {
 
         <ToggleRPC>
           {({ on, toggle }) => (
-            <div>
-              {/* {on && <h1>Show me!</h1>} */}
-              {on && (
-                <Portal>
-                  <h3>Hello from the opposite side of the Earth! :)</h3>
-                </Portal>
+            <Fragment>
+              {on ? (
+                <Modal on={on} toggle={toggle}>
+                  <h1>Hey! I'm from Modal</h1>
+                </Modal>
+              ) : (
+                <button onClick={toggle}>Show modal</button>
               )}
-              <button onClick={toggle}>Show / Hide</button>
-            </div>
+            </Fragment>
           )}
         </ToggleRPC>
       </header>

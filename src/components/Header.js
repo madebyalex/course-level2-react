@@ -13,7 +13,7 @@ export class Header extends Component {
           </li>
         </ul>
 
-        <button>Show modal</button>
+        <button>Say hi!</button>
       </header>
     );
   }
