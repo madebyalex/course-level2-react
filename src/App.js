@@ -1,9 +1,6 @@
 import React, { Fragment } from 'react';
-// import Toggle from './components/Toggle';
-import ToggleRenderProps from './components/ToggleRenderProps';
 import Header from './components/Header';
-import ToggleRPC from './components/ToggleRPC';
-import Modal from './components/Modal';
+import { Modal, ToggleRPC, ToggleRenderProps } from './utilities';
 import './App.scss';
 
 function App() {
