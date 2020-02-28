@@ -26,6 +26,7 @@ function App() {
               {on ? (
                 <Modal on={on} toggle={toggle}>
                   <h1>Hey! I'm from Modal</h1>
+                  <p>Welcome onboard!</p>
                 </Modal>
               ) : (
                 <button onClick={toggle}>Show modal</button>
