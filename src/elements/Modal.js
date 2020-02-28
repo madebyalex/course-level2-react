@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
-import { Portal, Icon } from '../utilities';
 import styled from 'styled-components';
+import { Portal } from '../utilities';
+import { Card } from './Cards';
+import Icon from './Icon';
 
 export default class Modal extends Component {
   render() {
@@ -9,12 +11,12 @@ export default class Modal extends Component {
       <Portal>
         {on && (
           <ModalWrap>
-            <ModalBase>
+            <Card>
               <CloseBtn onClick={toggle}>
                 <Icon name='close' size={24} color='#262626' />
               </CloseBtn>
               {children}
-            </ModalBase>
+            </Card>
             <ModalOverlay onClick={toggle}></ModalOverlay>
           </ModalWrap>
         )}
@@ -35,18 +37,12 @@ const ModalWrap = styled.div`
   align-items: center;
 `;
 
-const ModalBase = styled.div`
-  background: #ffffff;
-  min-width: 30rem;
-  max-width: 90%;
-  color: #212426;
-  position: relative;
-  border-radius: 5px;
-  box-shadow: 0 8px 16px -4px rgba(0, 0, 0, 0.25);
-  z-index: 10;
-  padding: 4rem 3rem;
-  margin-bottom: 2rem;
-`;
+// const ModalCard = Card.extend`
+//   color: #212426;
+//   position: relative;
+//   z-index: 10;
+//   margin-bottom: 2rem;
+// `;
 
 const ModalOverlay = styled.div`
   position: absolute;

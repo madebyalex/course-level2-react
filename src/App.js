@@ -1,6 +1,7 @@
 import React, { Fragment } from 'react';
 import Header from './components/Header';
-import { Modal, ToggleRPC, ToggleRenderProps } from './utilities';
+import { ToggleRPC, ToggleRenderProps } from './utilities';
+import { Modal } from './elements';
 import './App.scss';
 
 function App() {
