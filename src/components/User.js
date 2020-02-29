@@ -12,7 +12,9 @@ export default class User extends Component {
               {context.user.email} {context.user.name ? '·' : ''}{' '}
               {context.user.id}
             </p>
-            <button onClick={context.logout}>Log out</button>
+            {context.user.name && (
+              <button onClick={context.logout}>Log out</button>
+            )}
           </div>
         )}
       </UserContext.Consumer>

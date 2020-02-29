@@ -1,39 +1,10 @@
-import React, { Fragment, Component } from 'react';
-import { UserContext } from './UserContext';
+import React, { Fragment } from 'react';
+import UserProvider from './UserProvider';
 import Header from './components/Header';
 import { ToggleRPC, ToggleRenderProps } from './utilities';
 import { Modal } from './elements';
 import User from './components/User';
 import './App.scss';
-
-class UserProvider extends Component {
-  state = {
-    id: '249',
-    name: 'Alex',
-    email: 'hello@alexander.works'
-  };
-
-  logout = () => {
-    this.setState({
-      id: null,
-      name: '',
-      email: ''
-    });
-  };
-
-  render() {
-    return (
-      <UserContext.Provider
-        value={{
-          user: this.state,
-          logout: this.logout
-        }}
-      >
-        {this.props.children}
-      </UserContext.Provider>
-    );
-  }
-}
 
 function App() {
   return (
@@ -45,7 +16,7 @@ function App() {
               <div>
                 <Header extraClass={on} />
                 {/* {on && <h1>Show me!</h1>} */}
-                <button className='secondary' onClick={toggle}>
+                <button className='rounded secondary' onClick={toggle}>
                   Switch header
                 </button>
 
@@ -63,7 +34,9 @@ function App() {
                     <p>Welcome onboard!</p>
                   </Modal>
                 ) : (
-                  <button onClick={toggle}>Show modal</button>
+                  <button className='rounded' onClick={toggle}>
+                    Show modal
+                  </button>
                 )}
               </Fragment>
             )}
