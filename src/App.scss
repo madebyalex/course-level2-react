@@ -23,7 +23,7 @@
 main {
   display: grid;
   grid-template-columns: 1fr 5fr 1fr;
-  grid-template-rows: 1fr 9fr 3fr 0.5fr;
+  grid-template-rows: 1fr 7fr 2fr 0.5fr;
 }
 
 #root {
@@ -71,6 +71,7 @@ button {
   border: 1px solid var(--primary-color);
   border-radius: 3px;
   background-color: transparent;
+  display: inline-block;
 }
 
 button.rounded {
@@ -133,4 +134,17 @@ header.main {
     transform: translateY(-1rem);
     transition: all 0.45s ease-out;
   }
+}
+
+.toggle {
+  display: inline-block;
+}
+
+.aside-text {
+  position: absolute;
+  left: 0;
+  bottom: 10%;
+  writing-mode: vertical-lr;
+  transform: translateX(0) rotate(180deg);
+  opacity: 0.12;
 }

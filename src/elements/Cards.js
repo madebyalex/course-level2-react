@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import { elevation, transition, black, grey } from 'utilities';
+import { elevation, transition, black, grey } from '../utilities';
 
 export const Card = styled.div`
   background: #ffffff;
