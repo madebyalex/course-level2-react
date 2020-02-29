@@ -1,13 +1,22 @@
-import React, { Fragment } from 'react';
+import React, { useState, Fragment } from 'react';
+import { useSpring, animated as a } from 'react-spring';
 import UserProvider from './UserProvider';
 import Header from './components/Header';
 import { ToggleRPC, ToggleRenderProps } from './utilities';
 import { Modal } from './elements';
-// import { Transition } from 'react-spring';
 import User from './components/User';
 import './App.scss';
 
 function App() {
+  const [magicStatus, setMagicStatus] = useState(false);
+  const asideTextProps = useSpring({
+    opacity: magicStatus ? 0.2 : 0,
+    transform: magicStatus
+      ? 'rotate(180deg) translateX(0px)'
+      : 'rotate(180deg) translateX(20px)',
+    letterSpacing: magicStatus ? '0px' : '10px'
+  });
+
   return (
     <UserProvider>
       <div className='App'>
@@ -16,7 +25,6 @@ function App() {
             render={({ on, toggle }) => (
               <div>
                 <Header extraClass={on} />
-                {/* {on && <h1>Show me!</h1>} */}
                 <button className='rounded secondary' onClick={toggle}>
                   Switch header
                 </button>
@@ -33,13 +41,12 @@ function App() {
                   <button className='rounded secondary' onClick={toggle}>
                     Do some magic
                   </button>
-                  {/* <Transition from={{ opacity: 0 }} enter={{ opacity: 1 }}>
-                    {() => ( */}
-                  <Fragment>
-                    {on && <h1 className='aside-text'>Maaaaagic!</h1>}
-                  </Fragment>
-                  {/* )}
-                  </Transition> */}
+
+                  {on ? setMagicStatus(true) : setMagicStatus(false)}
+
+                  <a.div className='aside-text' style={asideTextProps}>
+                    <h1>Maaaaagic!</h1>
+                  </a.div>
                 </Fragment>
               )}
             </ToggleRPC>

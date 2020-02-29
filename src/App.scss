@@ -142,9 +142,11 @@ header.main {
 
 .aside-text {
   position: absolute;
-  left: 0;
-  bottom: 10%;
+  left: -20px;
+  bottom: 5%;
   writing-mode: vertical-lr;
   transform: translateX(0) rotate(180deg);
   opacity: 0.12;
+  min-height: 480px;
+  text-align: center;
 }

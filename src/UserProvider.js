@@ -3,9 +3,9 @@ import { UserContext } from './UserContext';
 
 export default class UserProvider extends Component {
   state = {
-    id: '249',
+    id: 'React Inc.',
     name: 'Alex',
-    email: 'hello@alexander.works'
+    email: 'hello@react.js'
   };
 
   logout = () => {
