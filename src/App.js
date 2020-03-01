@@ -9,6 +9,8 @@ import './App.scss';
 
 function App() {
   const [magicStatus, setMagicStatus] = useState(false);
+  const [showModal, setShowModal] = useState(false);
+
   const asideTextProps = useSpring({
     opacity: magicStatus ? 0.2 : 0,
     transform: magicStatus
@@ -16,6 +18,10 @@ function App() {
       : 'rotate(180deg) translateX(20px)',
     letterSpacing: magicStatus ? '0px' : '10px'
   });
+
+  // const asideTextValue = useSpring({
+  //   value: magicStatus ? 100 : 0
+  // });
 
   return (
     <UserProvider>
@@ -46,6 +52,7 @@ function App() {
 
                   <a.div className='aside-text' style={asideTextProps}>
                     <h1>Maaaaagic!</h1>
+                    {/* <p>...Loading {asideTextValue.value}</p> */}
                   </a.div>
                 </Fragment>
               )}

@@ -9,7 +9,9 @@ export const Card = styled.div`
   position: relative;
   border-radius: 5px;
   ${elevation[3]}
-  ${transition({})}
+  ${transition({
+    property: 'box-shadow'
+  })}
   z-index: 10;
   padding: 4rem 3rem;
   margin-bottom: 2rem;

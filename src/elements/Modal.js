@@ -1,15 +1,26 @@
-import React, { Component } from 'react';
+import React from 'react';
 import styled from 'styled-components';
+import { useSpring, animated as a } from 'react-spring';
+
 import { Portal, absolute } from '../utilities';
 import { Card } from './Cards';
 import Icon from './Icon';
 
-export default class Modal extends Component {
-  render() {
-    const { children, on, toggle } = this.props;
-    return (
-      <Portal>
-        {on && (
+export default function Modal(props) {
+  const { children, on, toggle } = props;
+
+  const modalProps = useSpring({
+    opacity: on ? 1 : 0
+  });
+
+  console.log('On is: ', on);
+
+  // setShowModal(on);
+
+  return (
+    <Portal>
+      {on && (
+        <a.div style={modalProps}>
           <ModalWrap>
             <Card>
               <CloseBtn onClick={toggle}>
@@ -19,10 +30,10 @@ export default class Modal extends Component {
             </Card>
             <ModalOverlay onClick={toggle}></ModalOverlay>
           </ModalWrap>
-        )}
-      </Portal>
-    );
-  }
+        </a.div>
+      )}
+    </Portal>
+  );
 }
 
 const ModalWrap = styled.div`
@@ -65,5 +76,6 @@ const CloseBtn = styled.button`
   text-transform: uppercase;
   min-width: initial;
   margin: 0;
+  border: none;
   box-shadow: inset 1px -1px 0 0 rgba(0, 0, 0, 0.1);
 `;
